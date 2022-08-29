@@ -1,0 +1,2 @@
+Website -------------> Choose Restaurant ------> Choose Food and add to cart -------> Make Payment ------> Book seat -----> Get Receipt 
+                                                                                                     |________________________|
