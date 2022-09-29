@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI:Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI:
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -1223,6 +1230,8 @@ div.owl-controls div.owl-nav div:hover {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  width: 100px;
+  height: 200px;
 }
 
 .product-image img:hover {
@@ -1237,6 +1246,17 @@ a.cart-btn {
 }
 
 a.cart-btn:hover {
+  background-color: #051922;
+  color: #F28123;
+}
+
+button.cart-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button.cart-btn:hover {
   background-color: #051922;
   color: #F28123;
 }
@@ -1887,6 +1907,11 @@ span.comment-date {
 # Cart Banner Styles
 
 ----------------------------------------------------------------------------- */
+
+.cart-item-qty {
+  margin-left: 5px
+}
+
 .cart-banner {
   background-color: #f5f5f5;
 }
@@ -2254,7 +2279,7 @@ ul.social-link-team li a {
   line-height: 1.8;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email], .contact-form form p input[type=password] {
   width: 49%;
   padding: 15px;
   border: 1px solid #ddd;
@@ -2441,6 +2466,20 @@ a.cart-btn i {
   margin-right: 5px;
 }
 
+button.cart-btn {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  background-color: #F28123;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border:rgba(242, 129, 35, 0.75)
+}
+
+button.cart-btn i {
+  margin-right: 5px;
+}
+
 .single-product-img img {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 20px #ddd;
@@ -2483,6 +2522,10 @@ input[type="number"] {
 }
 
 .single-product-form a.cart-btn {
+  margin-bottom: 15px;
+}
+
+.single-product-form button.cart-btn {
   margin-bottom: 15px;
 }
 

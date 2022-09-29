@@ -238,6 +238,13 @@ a.boxed-btn, a.bordered-btn,  a.cart-btn{
     border-radius: 50px;
 }
 
+button.cart-btn {
+  border-radius: 50px;
+  &:focus {
+    outline: none;
+  }
+}
+
 // Section Title
 .section-title h3 {
     font-size: 40px;

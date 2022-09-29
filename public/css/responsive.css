@@ -66,18 +66,11 @@
 	}
 	.contact-form form p input[type=text], 
 	.contact-form form p input[type=tel], 
-	.contact-form form p input[type=email] {
+	.contact-form form p input[type=email],
+	.contact-form form p input[type=password] {
 	    width: 100%;
 	}
-
-	.contact-form form p input[type=email] {
-	    margin-left: 0;
-	    margin-top: 15px;
-	}
-	.contact-form form p input[type=tel] {
-		margin-bottom: 15px;
-	}
-
+	
 	.hero-area div.hero-form {
 		width: 325px;
 		top: 30%;

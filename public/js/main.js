@@ -1,5 +1,8 @@
+
+
 (function ($) {
     "use strict";
+    
 
     $(document).ready(function($){
         
@@ -156,6 +159,22 @@
         $(".close-btn").on("click", function() {
             $(".search-area").removeClass("search-active");
         });
+
+        $(".add-to-cart").on("click" ,function(e) {
+            let item = JSON.parse($(this).context.dataset.item)
+            console.log(item)
+            
+            updateCart(item).then((data) => {
+                console.log(data)
+                const cnt = $("#cart-item-qty")
+                cnt.each(myfunc)
+                function myfunc(c) {
+                    $(this)[0].innerText = data.totalQty
+                }
+            })
+
+            
+        })
     
     });
 
@@ -166,3 +185,20 @@
 
 
 }(jQuery));
+
+async function updateCart(item) {
+
+    let qty = 0;
+    const res = await fetch('/update-cart', 
+    {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(item)
+    })
+
+    return res.json()
+
+}
