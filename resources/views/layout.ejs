@@ -82,8 +82,15 @@
 								</li>
 								<li>
 									<div class="header-icons">
+										<% if(user) { %>
+											<form id="logout" method="POST" action="/logout">
+												<a onclick="document.getElementById('logout').submit()" class="shopping-cart" href="#">Logout</a>
+											</form>
+											
+										<% } else { %>
                                         <a class="shopping-cart" href="/login">Login</a>
                                         <a class="shopping-cart" href="/register">Register</a>
+										<% } %>
 										<a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"><span id="cart-item-qty"><%= session.cart ? session.cart.totalQty : ''  %></span></i></a>
 									</div>
 								</li>

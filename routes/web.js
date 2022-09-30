@@ -3,6 +3,7 @@ const cartController = require('../app/http/controllers/customer/cartController'
 const checkoutController = require('../app/http/controllers/customer/checkoutController');
 const singleProductController = require('../app/http/controllers/customer/singleProductController');
 const authController = require('../app/http/controllers/authController')
+const guest = require('../app/http/middlewares/guest')
 
 function initRoutes(app) {
 
@@ -21,9 +22,15 @@ function initRoutes(app) {
 
     app.get('/restaurant/:restaurantId', homeController().restaurantItems)
 
-    app.get('/login', authController().login)
+    app.get('/login', guest, authController().login)
 
-    app.get('/register', authController().register)
+    app.post('/login', authController().postLogin)
+
+    app.get('/register', guest, authController().register)
+
+    app.post('/register', authController().postRegister)
+
+    app.post('/logout', authController().logout)
     
     app.get('/cart', cartController().index)
 

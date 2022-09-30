@@ -26,25 +26,28 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
-                            
+						<form method="POST" action="/register" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+                            <% if(messages.error) { %>
+							<p class="alert alert-danger" role="alert"><%= messages.error%></p>
+							<% } %>
 							<p>
-								<input type="text" placeholder="Name" name="name" id="name">
+								<input type="text" placeholder="Name" name="name" id="name" value="<%= messages.name%>">
                             </p>
-                            <p>
+                            <!--<p>
 								<input type="text" placeholder="User Name" name="username" id="username">
 							</p>
+						-->
 							<p>
-								<input type="tel" placeholder="Phone" name="phone" id="phone">
+								<input type="tel" placeholder="Phone" name="phone" id="phone" value="<%= messages.phone%>">
                             </p>
                             <p>
-								<input type="email" placeholder="Email" name="email" id="email">
+								<input type="email" placeholder="Email" name="email" id="email" value="<%= messages.email%>">
 							</p>
                             <p>
 								<input type="password" placeholder="Password" name="password" id="password">
 							</p>
                             <p>
-								<input type="password" placeholder="Re-enter Password" name="re-entered-password" id="re-entered-password">
+								<input type="password" placeholder="Re-enter Password" name="password2" id="re-entered-password">
 							</p>
                             
 							<p><input type="submit" value="Submit"></p>

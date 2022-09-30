@@ -26,17 +26,10 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
-                            
-							<p>
-								<input type="text" placeholder="Name" name="name" id="name">
-                            </p>
-                            <p>
-								<input type="text" placeholder="User Name" name="username" id="username">
-							</p>
-							<p>
-								<input type="tel" placeholder="Phone" name="phone" id="phone">
-                            </p>
+						<form action='/login' method="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+                            <% if(messages.error) { %>
+							<p class="alert alert-danger" role="alert"><%= messages.error%></p>
+							<% } %>
                             <p>
 								<input type="email" placeholder="Email" name="email" id="email">
 							</p>
@@ -44,7 +37,7 @@
 								<input type="password" placeholder="Password" name="password" id="password">
 							</p>
                             
-							<p><input type="submit" value="Submit"></p>
+							<p><input type="submit" value="Login"></p>
 						</form>
 					</div>
 				</div>
