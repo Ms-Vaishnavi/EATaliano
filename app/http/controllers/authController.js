@@ -20,7 +20,7 @@ function authController() {
                 }
 
                 req.logIn(user, (err) => {
-                    console.log("hereeeee")
+                    //console.log("hereeeee")
                     if(err) {
                         req.flash('error', info.message)
                         return next(err)

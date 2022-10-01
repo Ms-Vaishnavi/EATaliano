@@ -32,7 +32,7 @@ app.use(session({
     mongoUrl: url
   }),
   saveUninitialized: false,
-  cookie: {maxAge: 1000*60*60*24}
+  cookie: {maxAge: 1000*60*10}
 }))
 
 /********* Passport config ********/

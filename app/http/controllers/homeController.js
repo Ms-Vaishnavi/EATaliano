@@ -1,11 +1,12 @@
 const Restaurants = require('../../models/restaurant');
+const _ = require('lodash')
 
 function homeController() {
   return {
     async index(req, res){
       const restaurants = await Restaurants.find()
       
-      console.log(restaurants);
+      //console.log(restaurants);
       return res.render('index', {restaurants: restaurants});
     }, 
 
@@ -30,7 +31,7 @@ function homeController() {
       
       let resItems = restaurant.items
 
-      return res.render('single-product', {restaurantName: restaurant.toJSON().RName, items: resItems})
+      return res.render('single-product', {restaurantName: restaurant.toJSON().RName, restaurantId: resId, items: resItems})
     }
   }
 }

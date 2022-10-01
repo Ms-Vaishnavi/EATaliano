@@ -1,0 +1,53 @@
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Previous Orders</p>
+						<h1>Previous Orders</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+    
+    <section style="padding:10%">
+        <% if(messages.success) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Woohoo!</strong> <%= messages.success %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <% } %>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Order Id</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if(orders.length) { %>
+
+                    <% orders.forEach((order) => { %>
+                        
+                        <tr>
+                            <td><a href='/'><%= order._id %></a></td>
+                            <td><%=moment(order.createdAt).format('YYYY-MM-DD') %>  <%= moment(order.createdAt).format('hh:mm A') %></td>
+                          </tr>
+
+                    <% }) %>
+              
+              <% } else { %>
+
+                <tr>
+                  <td colspan="2">No orders found!</td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </section>

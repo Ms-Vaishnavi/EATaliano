@@ -28,7 +28,7 @@
 							</div>
 							<h3><%= item.toJSON().name %></h3>
 							<p class="single-product-pricing"><span>₹ <%= item.toJSON().price %></span></p>
-							<button type="submit" data-item="<%=JSON.stringify(item)%>"class="cart-btn add-to-cart"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+							<button type="submit" data-item="<%=JSON.stringify(item)%>" data-resid="<%=JSON.stringify(restaurantId)%>" class="cart-btn add-to-cart"><i class="fas fa-shopping-cart"></i> Add to cart</button>
 							<!-- <a href="#" data-item="<%= item%>" class="cart-btn add-to-cart"><i class="fas fa-shopping-cart"></i> Order Food</a> -->
 						</div>
 					</div>

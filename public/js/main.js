@@ -1,7 +1,7 @@
 
 
 (function ($) {
-    "use strict";
+    //"use strict";
     
 
     $(document).ready(function($){
@@ -162,14 +162,17 @@
 
         $(".add-to-cart").on("click" ,function(e) {
             let item = JSON.parse($(this).context.dataset.item)
-            console.log(item)
-            
-            updateCart(item).then((data) => {
-                console.log(data)
+            let resId = $(this).context.dataset.resid
+
+            updateCart(item, resId).then((data) => {
                 const cnt = $("#cart-item-qty")
                 cnt.each(myfunc)
                 function myfunc(c) {
-                    $(this)[0].innerText = data.totalQty
+                    if($(this)[0].innerText == data.totalQty) alert("Please add items from one restaurant at a time!")
+                    else { 
+                        $(this)[0].innerText = data.totalQty
+                        alert("Item added to cart!")
+                    }
                 }
             })
 
@@ -186,8 +189,10 @@
 
 }(jQuery));
 
-async function updateCart(item) {
+async function updateCart(item, resId) {
 
+    console.log({item, resId})
+    item[ 'resId' ] = resId;
     let qty = 0;
     const res = await fetch('/update-cart', 
     {
@@ -202,3 +207,4 @@ async function updateCart(item) {
     return res.json()
 
 }
+
